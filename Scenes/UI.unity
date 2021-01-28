@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 57865350}
   - component: {fileID: 57865352}
   m_Layer: 0
-  m_Name: Sem_titulo
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ece1e599cc7923347ae196184d8eaeee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57865349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.92, z: 0}
+  m_LocalPosition: {x: 0.3, y: 0.92, z: 0.19}
   m_LocalScale: {x: 1.8807349, y: 1.8807349, z: 1.8807349}
   m_Children: []
   m_Father: {fileID: 0}
@@ -236,6 +236,8 @@ GameObject:
   - component: {fileID: 237950638}
   - component: {fileID: 237950641}
   - component: {fileID: 237950642}
+  - component: {fileID: 237950643}
+  - component: {fileID: 237950644}
   m_Layer: 5
   m_Name: playBtn
   m_TagString: Untagged
@@ -359,7 +361,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 664708205}
+        - m_Target: {fileID: 237950644}
           m_MethodName: btnPlay
           m_Mode: 1
           m_Arguments:
@@ -389,6 +391,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &237950643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237950636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9906cf8a9075c419372799cebe56f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked_animation: {fileID: 237950642}
+--- !u!114 &237950644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237950636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbd68609680caf41a88200a16dc1584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonAnimations: {fileID: 237950643}
 --- !u!1 &348667265
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +430,9 @@ GameObject:
   - component: {fileID: 348667268}
   - component: {fileID: 348667267}
   - component: {fileID: 348667270}
+  - component: {fileID: 348667271}
+  - component: {fileID: 348667272}
+  - component: {fileID: 348667273}
   m_Layer: 5
   m_Name: creditsBtn
   m_TagString: Untagged
@@ -525,7 +556,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 664708205}
+        - m_Target: {fileID: 348667272}
           m_MethodName: btnCredits
           m_Mode: 1
           m_Arguments:
@@ -536,6 +567,51 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &348667271
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348667265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 291aa423eac621f409a320baad8dd0e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &348667272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348667265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbd68609680caf41a88200a16dc1584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonAnimations: {fileID: 348667273}
+--- !u!114 &348667273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348667265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9906cf8a9075c419372799cebe56f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked_animation: {fileID: 348667271}
 --- !u!1 &513247071
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbd68609680caf41a88200a16dc1584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonAnimations: {fileID: 237950643}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +929,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.8773585, g: 0.87027204, b: 0.3600481, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1073,6 +1150,9 @@ GameObject:
   - component: {fileID: 1308552294}
   - component: {fileID: 1308552293}
   - component: {fileID: 1308552292}
+  - component: {fileID: 1308552298}
+  - component: {fileID: 1308552297}
+  - component: {fileID: 1308552296}
   m_Layer: 5
   m_Name: exitBtn
   m_TagString: Untagged
@@ -1116,7 +1196,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 664708205}
+        - m_Target: {fileID: 1308552297}
           m_MethodName: btnQuit
           m_Mode: 1
           m_Arguments:
@@ -1207,3 +1287,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308552290}
   m_CullTransparentMesh: 0
+--- !u!114 &1308552296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308552290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9906cf8a9075c419372799cebe56f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked_animation: {fileID: 1308552298}
+--- !u!114 &1308552297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308552290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbd68609680caf41a88200a16dc1584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonAnimations: {fileID: 1308552296}
+--- !u!95 &1308552298
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308552290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c58bcb22a2e0466479f2d09572e58d7f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
