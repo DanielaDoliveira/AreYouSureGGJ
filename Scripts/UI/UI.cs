@@ -8,13 +8,16 @@ public class UI : MonoBehaviour,IUserInterface
    
     private Scene scene; 
     public ButtonAnimations buttonAnimations;
+    public AudioClip clickButtonsong;
     public void btnPlay()
     {
+          ClickSong();
           buttonAnimations.SetPlayBtnAnimation();
           Invoke("loadPlayScene",1f);
     }
     public void btnCredits()
     {
+         ClickSong();
         buttonAnimations.SetCreditsButtonAnimation();
         Invoke("loadCreditsScene",1f);
 
@@ -22,6 +25,7 @@ public class UI : MonoBehaviour,IUserInterface
    
     public void btnQuit()
     {
+         ClickSong();
         buttonAnimations.SetQuitButtonAnimation();
         Invoke("exitGame",1f);
     }
@@ -39,4 +43,11 @@ public class UI : MonoBehaviour,IUserInterface
     {
          Application.Quit();//SAI DO JOGO
     }
+
+    public void ClickSong()
+    {
+        SoundManager.instance.TitleMenuSongButtons(clickButtonsong);
+    }
+
+   
 }

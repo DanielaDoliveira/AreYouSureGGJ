@@ -8,6 +8,7 @@ public class TextAnimationOrder : MonoBehaviour
     public GameObject globalGO;
     public Text teamLogo;
     public Animator anim;
+    
     void Start()
     {
         teamLogo.text = " ";
@@ -31,7 +32,7 @@ public class TextAnimationOrder : MonoBehaviour
    public IEnumerator GlobalGameJamLogo()
     {
         globalGO.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6f);
         globalGO.SetActive(false);
         StartCoroutine(teamLogoAnim());
     }
