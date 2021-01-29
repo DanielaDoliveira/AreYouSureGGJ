@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PauseAudio : MonoBehaviour
 {
-   
+ 
     void Start()
     {
-        SoundManager.instance.audio_Intro.Pause();
+        SoundManager.instance.audio_Intro.Stop();  //Pára completamente a música. 
     }
 
     

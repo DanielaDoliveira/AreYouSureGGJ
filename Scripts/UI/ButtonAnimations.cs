@@ -26,5 +26,9 @@ public class ButtonAnimations : MonoBehaviour
    {
        clicked_animation.SetTrigger("exit");
    }
+   public void SetBackButtonAnimation()
+   {
+       clicked_animation.SetTrigger("backTrigger");
+   }
 
 }

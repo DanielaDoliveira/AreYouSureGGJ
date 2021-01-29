@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonAnimations: {fileID: 0}
   clickButtonsong: {fileID: 0}
+  clickPlay: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,16 +782,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2537580159774456232, guid: 248587abd47c3dd4ca41dee710a787bf,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 23d88dde487cf7d4082246e1ab5ccf50, type: 3}
-    - target: {fileID: 2537580159774456232, guid: 248587abd47c3dd4ca41dee710a787bf,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7118189867886793360, guid: 248587abd47c3dd4ca41dee710a787bf,
         type: 3}
       propertyPath: m_Name

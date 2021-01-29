@@ -8,7 +8,7 @@ public class UI : MonoBehaviour,IUserInterface
    
     private Scene scene; 
     public ButtonAnimations buttonAnimations;
-    public AudioClip clickButtonsong;
+    public AudioClip clickButtonsong,clickPlay;
     public void btnPlay()
     {
           ClickSong();
@@ -48,6 +48,9 @@ public class UI : MonoBehaviour,IUserInterface
     {
         SoundManager.instance.TitleMenuSongButtons(clickButtonsong);
     }
-
+    public void ClickPlay()
+    {
+         SoundManager.instance.TitleMenuSongPlay(clickPlay);
+    }
    
 }

@@ -9,8 +9,13 @@ public class TextAnimationOrder : MonoBehaviour
     public Text teamLogo;
     public Animator anim;
     
+    void Awake()
+    {
+     
+    }
     void Start()
     {
+        SoundManager.instance.audio_Intro.Play();
         teamLogo.text = " ";
          StartCoroutine("GlobalGameJamLogo");
     }
