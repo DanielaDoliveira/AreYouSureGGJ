@@ -8,5 +8,9 @@
   com base neles o botão na tela da Unity é ativado(se o player ganhou, botão de próximo nível. Se perdeu botão de recomeçar nível</li>
   <li> Importando assets de arte, fonte e som e implementando os assets do menu</li>
   <li> Integrando a ferramenta fungus na unity</li>
-  
+  <li> Efeito sonoro dos botões do menu implementado</li>
+  <li>Animação dos botões do menu implementada</li>
+  <li> Intro implementada</li>
+  <li>Música da intro corrigida</li>
+  <li>Menu Concluído</li>
 </ul>
