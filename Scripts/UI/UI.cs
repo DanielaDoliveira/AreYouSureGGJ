@@ -29,11 +29,11 @@ public class UI : MonoBehaviour,IUserInterface
 
     public void loadPlayScene()
     {
-         SceneManager.LoadScene(2);//Acessa a tela 2, que é o dia 1
+         SceneManager.LoadScene(3);//Acessa a tela 3, que é o dia 1
     }
     public void loadCreditsScene()
     {
-          SceneManager.LoadScene(1);//Acessa a tela 1(CREDITS)
+          SceneManager.LoadScene(2);//Acessa a tela 2(CREDITS)
     }
     public void exitGame()
     {

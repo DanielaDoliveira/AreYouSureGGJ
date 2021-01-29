@@ -6,7 +6,7 @@ public class BackButtonBehaviour : MonoBehaviour
 {
     public void btnBack()
     {
-        SceneManager.LoadScene(0);//ACESSA A TELA DE USER INTERFACE
+        SceneManager.LoadScene(1);//ACESSA A TELA DE USER INTERFACE
     }
     
 
