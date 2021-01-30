@@ -11,23 +11,31 @@ public class GameOver : MonoBehaviour
     public int pointsNbr;
     public Text pointsTxt;
     public Text showMessageToPlayer;
-
+    private bool isGameOver;
       public GameObject btnVictory,btnTryAgain;
+
+    
       private int scene;
+      void Awake()
+      {
+           GameManager.instance.isgameOver = false;
+      }
        void Start()
     {
          btnTryAgain.SetActive(false);
          btnVictory.SetActive(false);
-       // GameManager.instance.isgameOver = false;
+       
         pointsNbr = PlayerPrefs.GetInt("RESULTS");
         pointsTxt.text = pointsNbr.ToString();
         VictoryOrDefeat();
         scene = PlayerPrefs.GetInt("SCENE");
-      
+         
+        
        
       
     }
-
+ 
+ 
     
     //VERIFICA SE, DEPENDENDO DA QUANTIA DE PONTOS, GANHOU OU PERDEU
     public void VictoryOrDefeat()
@@ -46,6 +54,8 @@ public class GameOver : MonoBehaviour
     void Update() 
     {
       controlGameState();
+     
+   
     }
 
     /*VAI PARA A TELA DE VITÓRIA*/
@@ -70,6 +80,9 @@ public class GameOver : MonoBehaviour
     public void pressBtnTryAgain()
     {
           scene = PlayerPrefs.GetInt("SCENE");
+          GameManager.instance.timer = 10;
+          GameManager.instance.isgameOver = false;
+          
            SceneManager.LoadScene(scene);
     }
 
@@ -87,6 +100,8 @@ public class GameOver : MonoBehaviour
             controlDefeat();
         }
     }
+
+
    
    
 }

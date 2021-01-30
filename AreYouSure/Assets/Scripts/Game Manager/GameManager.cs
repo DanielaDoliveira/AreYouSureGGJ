@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
     public float timer;
     public Text timeTxt;
-     public int pointsNbr;
-    public Text pointsTxt;
+    
     public bool isgameOver;
    
      public GameObject[] characterVector;
@@ -44,75 +43,33 @@ public class GameManager : MonoBehaviour
            Destroy(gameObject);
        }
        DontDestroyOnLoad(gameObject);
+      
    }
    void Start()
    {
-     
-       TimeAndPointsDeclaration();
+         isgameOver = false;
+        
        gameState = GameState.playing;
      //  btnVictory.SetActive(false);
      //  btnTryAgain.SetActive(false);
+    
    
    }
 
-    public void TimeAndPointsDeclaration()
-    {
-        timer = 10f;
-        timeTxt.text = timer.ToString();
-        pointsNbr = 0;
-        pointsTxt.text = pointsNbr.ToString();
-    }
-  
-     public void countDown()
-    {
-      if(timer>=0)
-      {
-          timer -= 1*Time.deltaTime;
-          timeTxt.text = timer.ToString("F0");
-      }
-      verifyIftimeFinished();
-    }
-    public void verifyIftimeFinished()
-    {
-        if(timer <= 0)
-        {
-            transferPointsDataGameOver();
-           //  timeTxt.text = timer.ToString("F0");
-             isgameOver = true;
-             if(isgameOver)
-             {
-             
-                  SceneManager.LoadScene("GameOver");
-             }
-            
-        }
-
-    }
-
+   
+    
+    
  
-    public void AddPoints()
-    {
-        pointsNbr +=1;
-        pointsTxt.text = pointsNbr.ToString();
+ 
+    
 
-    }
-     public void SubPoints()
-    {
-          pointsNbr -=1;
-          pointsTxt.text = pointsNbr.ToString();
-    }
-
-    public void transferPointsDataGameOver()
-    {
-        PlayerPrefs.SetInt("RESULTS",pointsNbr);
-
-    }
+   
     
     void Update()
     {
        
-        countDown();
-      
+        
+       
 
     }
    
