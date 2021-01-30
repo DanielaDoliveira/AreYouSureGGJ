@@ -12,6 +12,7 @@ public class TimeCount : MonoBehaviour
     {
         
         timeTxt.text = timer.ToString();
+     
     }
   public void countDown()
     {

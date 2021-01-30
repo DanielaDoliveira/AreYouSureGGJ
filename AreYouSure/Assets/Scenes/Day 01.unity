@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: 0
   previous: 0
-  vectorLastPosition: 0
+  vectorLastPosition: 12
   characterImage:
   - {fileID: 1223056827}
   - {fileID: 1250469677}

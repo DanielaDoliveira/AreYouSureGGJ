@@ -13,7 +13,7 @@ public class VectorData : MonoBehaviour
 
     void Awake()
     {
-        vectorLastPosition = 12;
+       
     }
 
    /*A CADA ACERTO OU ERRO, É PASSADO PARA O PRÓXIMO PERSONAGEM*/

@@ -13,23 +13,25 @@ public class GameOver : MonoBehaviour
     public Text showMessageToPlayer;
     private bool isGameOver;
       public GameObject btnVictory,btnTryAgain;
-
+    public int minimunToVictory;
     
       private int scene;
       void Awake()
       {
-           GameManager.instance.isgameOver = false;
+          // GameManager.instance.isgameOver = false;
       }
        void Start()
     {
+          
+        
          btnTryAgain.SetActive(false);
          btnVictory.SetActive(false);
        
         pointsNbr = PlayerPrefs.GetInt("RESULTS");
         pointsTxt.text = pointsNbr.ToString();
-        VictoryOrDefeat();
+      
         scene = PlayerPrefs.GetInt("SCENE");
-         
+           VictoryOrDefeat();
         
        
       
@@ -40,15 +42,15 @@ public class GameOver : MonoBehaviour
     //VERIFICA SE, DEPENDENDO DA QUANTIA DE PONTOS, GANHOU OU PERDEU
     public void VictoryOrDefeat()
     {
-        if(pointsNbr<50)
+        if(pointsNbr<6)
         {
             gameState = GameState.defeat;
-            showMessageToPlayer.text = "YOU FIRED! TOO BAD!";
+            showMessageToPlayer.text = "YOU FIRED!\n TOO BAD!";
         }
-        else if(pointsNbr>=50)
+        else if(pointsNbr>=6)
         {
             gameState = GameState.victory;
-              showMessageToPlayer.text = "YOU GOT A PROMOTION! VERY GOOD, MAN!";
+              showMessageToPlayer.text = "YOU GOT A PROMOTION!\n VERY GOOD, MAN!";
         }
     }
     void Update() 

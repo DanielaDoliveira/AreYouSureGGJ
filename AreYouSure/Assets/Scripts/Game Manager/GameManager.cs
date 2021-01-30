@@ -27,8 +27,7 @@ public class GameManager : MonoBehaviour
   
    
     /*O GAME MANAGER CONTROLA A PASSAGEM DAS FASES DE ACORDO COM O SISTEMA DE 
-    VITÓRIA OU REPETE A CENA CASO HAJA DERROTA
-    - O GAME MANAGER TAMBÉM CONTA OS PONTOS E MARCA O TIMER*/
+    VITÓRIA OU REPETE A CENA CASO HAJA DERROTA*/
    void Awake()
    {
        
@@ -47,26 +46,11 @@ public class GameManager : MonoBehaviour
    }
    void Start()
    {
-      
          isgameOver = false;
-    
-
-       gameState = GameState.playing;
-     //  btnVictory.SetActive(false);
-     //  btnTryAgain.SetActive(false);
-    
-   
+       gameState = GameState.playing;   
    }
 
-   
-    
-    void Update()
-    {
-       
-        
-       
 
-    }
    
    
 }
