@@ -15,7 +15,8 @@ public class TextAnimationOrder : MonoBehaviour
     }
     void Start()
     {
-        SoundManager.instance.audio_Intro.Play();
+    
+        //SoundManager.instance.audio_Intro.Play();  
         teamLogo.text = " ";
          StartCoroutine("GlobalGameJamLogo");
     }

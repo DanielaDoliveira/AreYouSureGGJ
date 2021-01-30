@@ -16,7 +16,7 @@ public class BackButtonBehaviour : MonoBehaviour
     public void LoadIntroScene()
     {
        
-        SceneManager.LoadScene(0);//ACESSA A TELA DE INTRO
+        SceneManager.LoadScene(1);//ACESSA A TELA DE UI
     }
       public void ClickSong()
     {
