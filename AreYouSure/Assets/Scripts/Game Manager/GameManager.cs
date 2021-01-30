@@ -14,18 +14,20 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject btnVictory,btnTryAgain;
+  
     public GameState gameState;
     public float timer;
     public Text timeTxt;
      public int pointsNbr;
     public Text pointsTxt;
+    public bool isgameOver;
    
      public GameObject[] characterVector;
      public Image[] characterImage;
      [Header("Posição anterior do vetor e próxima posição")]
    public int next = 0;//colocado na posição do vetor de personagem.
    public int previous = 0;
+ 
 
     /*O GAME MANAGER CONTROLA A PASSAGEM DAS FASES DE ACORDO COM O SISTEMA DE 
     VITÓRIA OU REPETE A CENA CASO HAJA DERROTA
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
    }
    void Start()
    {
-       
+     
        TimeAndPointsDeclaration();
        gameState = GameState.playing;
      //  btnVictory.SetActive(false);
@@ -76,8 +78,13 @@ public class GameManager : MonoBehaviour
         {
             transferPointsDataGameOver();
            //  timeTxt.text = timer.ToString("F0");
-         
-             SceneManager.LoadScene("GameOver");
+             isgameOver = true;
+             if(isgameOver)
+             {
+             
+                  SceneManager.LoadScene("GameOver");
+             }
+            
         }
 
     }
@@ -103,47 +110,15 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        controlGameState();
+       
         countDown();
       
 
     }
-    /*CONTROLA A ATIVAÇÃO DOS BOTÕES TRY AGAIN E NEXT LEVEL ATRAVÉS DOS ESTADOS DO JOGO DE VITÓRIA
-    E DERROTA*/
-    public void controlGameState()
-    {
-        if(gameState == GameState.victory)
-        {
-            controlVictory();
-        }
-        else if (gameState == GameState.defeat)
-        {
-            controlDefeat();
-        }
-    }
-    /*COMPORTAMENTO DO BOTÃO QUE AVANÇA NA CENA*/
-    public void pressBtnNextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    /*COMPORTAMENTO DO BOTÃO QUE REPETE A CENA ATUAL*/
-    public void pressBtnTryAgain()
-    {
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-    /*VAI PARA A TELA DE VITÓRIA*/
-    public void controlVictory()
-    {     
-        SceneManager.LoadScene("victory");
-            //btnVictory.SetActive(true);
-    }
+   
+    
 
-    /*VAI PARA A TELA DE DERROTA*/
-    public void controlDefeat()
-    {
-          SceneManager.LoadScene("GameOver");
-        //btnTryAgain.SetActive(true);
-    }
+   
 
     /*A CADA ACERTO OU ERRO, É PASSADO PARA O PRÓXIMO PERSONAGEM*/
     public void afterChooseObject()
