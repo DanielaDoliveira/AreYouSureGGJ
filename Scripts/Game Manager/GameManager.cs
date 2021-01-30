@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject btnVictory,btnTryAgain;
-    [SerializeField]private GameState gameState;
+    public GameState gameState;
+    public float timer;
+    public Text timeTxt;
 
     /*O GAME MANAGER CONTROLA A PASSAGEM DAS FASES DE ACORDO COM O SISTEMA DE 
     VITÓRIA OU REPETE A CENA CASO HAJA DERROTA*/
@@ -34,14 +36,25 @@ public class GameManager : MonoBehaviour
    }
    void Start()
    {
+       timer = 50f;
+       
+        timeTxt.text = timer.ToString();
        gameState = GameState.playing;
        btnVictory.SetActive(false);
        btnTryAgain.SetActive(false);
    }
-    
+     public void countDown()
+    {
+      if(timer>0)
+      {
+          timer -= 1*Time.deltaTime;
+          timeTxt.text = timer.ToString("F0");
+      }
+    }
     void Update()
     {
         controlGameState();
+        countDown();
     }
     /*CONTROLA A ATIVAÇÃO DOS BOTÕES TRY AGAIN E NEXT LEVEL ATRAVÉS DOS ESTADOS DO JOGO DE VITÓRIA
     E DERROTA*/
@@ -66,15 +79,19 @@ public class GameManager : MonoBehaviour
     {
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    /*O BOTÃO SÓ APARECE SE O PLAYER GANHAR O JOGO*/
+    /*VAI PARA A TELA DE VITÓRIA*/
     public void controlVictory()
     {     
-            btnVictory.SetActive(true);
+        SceneManager.LoadScene("victory");
+            //btnVictory.SetActive(true);
     }
 
-    /*O BOTÃO SÓ APARECE QUANDO O PLAYER FOR DERROTADO*/
+    /*VAI PARA A TELA DE DERROTA*/
     public void controlDefeat()
     {
-        btnTryAgain.SetActive(true);
+          SceneManager.LoadScene("GameOver");
+        //btnTryAgain.SetActive(true);
     }
+
+   
 }
