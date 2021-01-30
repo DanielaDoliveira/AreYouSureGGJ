@@ -10,7 +10,7 @@ public class TimeCount : MonoBehaviour
     public PointsCount pointsCount;
     void Start()
     {
-          timer = 10f;
+        
         timeTxt.text = timer.ToString();
     }
   public void countDown()

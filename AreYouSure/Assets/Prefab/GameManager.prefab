@@ -46,8 +46,6 @@ MonoBehaviour:
   gameState: 0
   timer: 0
   timeTxt: {fileID: 0}
-  pointsNbr: 0
-  pointsTxt: {fileID: 0}
   isgameOver: 0
   characterVector:
   - {fileID: 0}
@@ -67,5 +65,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   next: 0
   previous: 0
+  vectorLastPosition: 12
