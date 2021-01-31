@@ -30,5 +30,13 @@ public class ButtonAnimations : MonoBehaviour
    {
        clicked_animation.SetTrigger("backTrigger");
    }
+   public void SetButtonTryAgain()
+   {
+       clicked_animation.SetTrigger("tryClicked");
+   }
+   public void SetNextLevelButtonAnimation()
+   {
+       clicked_animation.SetTrigger("nextLevelClicked");
+   }
 
 }

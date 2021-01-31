@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
    
      public GameObject[] characterVector;
      public Image[] characterImage;
-
+     
   
    
     /*O GAME MANAGER CONTROLA A PASSAGEM DAS FASES DE ACORDO COM O SISTEMA DE 

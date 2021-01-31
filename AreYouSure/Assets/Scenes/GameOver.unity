@@ -208,13 +208,15 @@ GameObject:
   - component: {fileID: 237950639}
   - component: {fileID: 237950638}
   - component: {fileID: 237950641}
+  - component: {fileID: 237950642}
+  - component: {fileID: 237950643}
   m_Layer: 5
   m_Name: tryAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &237950637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -331,8 +333,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 963194229}
-          m_MethodName: pressBtnTryAgain
+        - m_Target: {fileID: 237950643}
+          m_MethodName: SetButtonTryAgain
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -342,6 +344,49 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_MethodName: InvokeTry
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!95 &237950642
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237950636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75040ddb12b09d744b9431dea9cff948, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &237950643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237950636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9906cf8a9075c419372799cebe56f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked_animation: {fileID: 237950642}
 --- !u!1 &250764530
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +554,8 @@ GameObject:
   - component: {fileID: 348667268}
   - component: {fileID: 348667267}
   - component: {fileID: 348667270}
+  - component: {fileID: 348667271}
+  - component: {fileID: 348667272}
   m_Layer: 5
   m_Name: nextLevel
   m_TagString: Untagged
@@ -632,8 +679,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 963194229}
-          m_MethodName: pressBtnNextLevel
+        - m_Target: {fileID: 348667272}
+          m_MethodName: SetNextLevelButtonAnimation
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -643,6 +690,49 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_MethodName: InvokeNextLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!95 &348667271
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348667265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06e2ac28a77662c4c84ab8a8b3daa7ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &348667272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348667265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9906cf8a9075c419372799cebe56f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked_animation: {fileID: 348667271}
 --- !u!1 &497884580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1307,7 @@ MonoBehaviour:
   btnVictory: {fileID: 348667265}
   btnTryAgain: {fileID: 237950636}
   minimunToVictory: 0
+  mediumPointsToVictory: 0
 --- !u!1 &1103546267
 GameObject:
   m_ObjectHideFlags: 0

@@ -1186,6 +1186,7 @@ MonoBehaviour:
   next: 0
   previous: 0
   vectorLastPosition: 12
+  pointsNbr: 0
   characterImage:
   - {fileID: 1223056827}
   - {fileID: 1250469677}
@@ -1200,6 +1201,7 @@ MonoBehaviour:
   - {fileID: 938939472}
   - {fileID: 1306660101}
   - {fileID: 1948543182}
+  pointsCountScript: {fileID: 29685927}
 --- !u!4 &1570792793
 Transform:
   m_ObjectHideFlags: 0

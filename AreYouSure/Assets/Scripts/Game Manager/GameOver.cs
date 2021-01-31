@@ -15,14 +15,16 @@ public class GameOver : MonoBehaviour
       public GameObject btnVictory,btnTryAgain;
     public int minimunToVictory;
     
+    
       private int scene;
       void Awake()
       {
-          // GameManager.instance.isgameOver = false;
+
       }
        void Start()
     {
-          
+         
+        //PEGA O REGISTRO MEDIUM
         
          btnTryAgain.SetActive(false);
          btnVictory.SetActive(false);
@@ -30,7 +32,7 @@ public class GameOver : MonoBehaviour
         pointsNbr = PlayerPrefs.GetInt("RESULTS");
         pointsTxt.text = pointsNbr.ToString();
       
-        scene = PlayerPrefs.GetInt("SCENE");
+     //   scene = PlayerPrefs.GetInt("SCENE");
            VictoryOrDefeat();
         
        
@@ -49,7 +51,7 @@ public class GameOver : MonoBehaviour
         }
         else if(pointsNbr>=6)
         {
-            gameState = GameState.victory;
+              gameState = GameState.victory;
               showMessageToPlayer.text = "YOU GOT A PROMOTION!\n VERY GOOD, MAN!";
         }
     }
@@ -74,18 +76,43 @@ public class GameOver : MonoBehaviour
           btnTryAgain.SetActive(true);
     }
      /*COMPORTAMENTO DO BOTÃO QUE AVANÇA NA CENA*/
+     
+    public void InvokeNextLevel()
+    {
+        Invoke("pressBtnNextLevel",1f);
+    }
     public void pressBtnNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        int scene = PlayerPrefs.GetInt("SCENE");
+          if(scene==3)//day 1
+          {
+                 SceneManager.LoadScene("Day 02");//DAY2
+          }
+          else if(scene == 5)
+          {
+              SceneManager.LoadScene("Day 03");
+          }
+           else if(scene == 6)
+          {
+               SceneManager.LoadScene("Introduction");
+          }
+
+     
+    }
+
+    public void InvokeTry()
+    {
+        Invoke("pressBtnTryAgain",1f);
     }
     /*COMPORTAMENTO DO BOTÃO QUE REPETE A CENA ATUAL*/
     public void pressBtnTryAgain()
     {
           scene = PlayerPrefs.GetInt("SCENE");
-          GameManager.instance.timer = 10;
+         
+           SceneManager.LoadScene(scene);
           GameManager.instance.isgameOver = false;
           
-           SceneManager.LoadScene(scene);
+          
     }
 
      /*CONTROLA A ATIVAÇÃO DOS BOTÕES TRY AGAIN E NEXT LEVEL ATRAVÉS DOS ESTADOS DO JOGO DE VITÓRIA

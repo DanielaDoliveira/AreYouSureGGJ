@@ -9,12 +9,12 @@ public class PointsCount : MonoBehaviour
 
      public int pointsNbr;
     public Text pointsTxt;
-
+    public static PointsCount pointsCount;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointsNbr = pointsCount.pointsNbr;
     }
 
     // Update is called once per frame

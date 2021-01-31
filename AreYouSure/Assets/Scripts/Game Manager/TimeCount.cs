@@ -36,7 +36,7 @@ public class TimeCount : MonoBehaviour
         if(timer <= 0)
         {
            pointsCount.transferPointsDataGameOver();
-            GameManager.instance.isgameOver = true;
+           // GameManager.instance.isgameOver = true;
              LoadGameOver();
            
             
@@ -48,13 +48,13 @@ public class TimeCount : MonoBehaviour
      public void LoadGameOver()
     {
     
-         if(GameManager.instance.isgameOver)
-         {
+        // if(GameManager.instance.isgameOver)
+      //   {
                if(SceneManager.GetActiveScene().buildIndex!=4)//Game Over com ID = 4
        {
              SceneManager.LoadScene(4);
    
-       }
+     //  }
          }
         
       
